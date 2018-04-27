@@ -57,13 +57,13 @@ body {
 	left: 330px;
 	width: 70px;
 	height: 70px;
- text-align: center;
- background-color: Transparent;
- background-repeat: no-repeat;
- border: none;
- cursor: pointer;
- overflow: hidden;
- outline: none;
+	text-align: center;
+	background-color: Transparent;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: visible;
+	outline: none;
 }
 
 .text-white{
@@ -137,10 +137,13 @@ input::placeholder{
 	font-weight: 700;
 }
 
-.registration button{
+.registration a{
 	margin-top: 20px;
-	border-radius: 0;
-	color: #aaa;
-	margin-left: 20px;
+    display: inline-block;
+	padding: 5px 15px;
+	background-color: rgb(221, 221, 221);
+	text-decoration: none;
+	color: rgb(32, 138, 236);
+	margin-left: 25px;
 	font-weight: 700;
 }
