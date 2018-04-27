@@ -8,7 +8,7 @@
       <div id="bottomBlurBg"></div>
 
       <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-        <div class="loginForm">
+        <div class="registrationForm">
           <div class="title">
             <p>TOP PM
               <br>
@@ -17,16 +17,14 @@
             <hr>
             <hr class="short">
           </div>
-          <input id="login" name="login" class="effect-2" type="text" placeholder="Login..." ngModel>
+          <input id="login" name="login" class="effect-2" type="text" placeholder="Login" ngModel>
           <span class="focus-border"></span>
-          <input id="pass" name="pass" class="effect-2" type="password" placeholder="Password..." ngModel>
+          <input id="pass" name="pass" class="effect-2" type="password" placeholder="Password" ngModel>
           <span class="focus-border"></span>
-          <div class="forget">
-            <button class="btn btn-default btn-sm">FORGOT PASSWORD?</button>
-          </div>
-          <div class="registration">
-            <button class="btn btn-default btn-sm">REGISTRATION</button>
-          </div>
+          <input id="name" name="name" class="effect-2" type="text" placeholder="Name" ngModel>
+          <span class="focus-border"></span>
+          <input id="surname" name="surname" class="effect-2" type="text" placeholder="Surname" ngModel>
+          <span class="focus-border"></span>
         </div>
         <button class="enterButton" type="submit">
           <i class="fa fa-lock fa-2x text-white"></i>

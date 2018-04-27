@@ -57,13 +57,13 @@ body {
 	left: 330px;
 	width: 70px;
 	height: 70px;
- text-align: center;
- background-color: Transparent;
- background-repeat: no-repeat;
- border: none;
- cursor: pointer;
- overflow: hidden;
- outline: none;
+	text-align: center;
+	background-color: Transparent;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: visible;
+	outline: none;
 }
 
 .text-white{
@@ -77,10 +77,10 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
-.loginForm{
+.registrationForm{
 	position: absolute;
 	top: 300px;
- left: 70px;
+ 	left: 70px;
 }
 
 .title{
@@ -106,7 +106,7 @@ hr.short{
 	width: 50px;
 	border-width: 2px;
 	border-color: #67e2fb; 
-	float: left;
+	/* float: left; */
 	margin: 0;
 
 }
@@ -117,7 +117,16 @@ hr.short{
 :focus{outline: none;}
 
 .col-3{float: left; width: 100%; margin-top: 20px; margin-bottom: 0;} 
-input{margin-top: 15px;font: 15px/24px "Open Sans", sans-serif; color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px; width: 65%;}
+input{
+	position: relative; 
+	margin-top: 15px;
+	font: 15px/24px "Open Sans", sans-serif; 
+	color: #333; 
+	width: 100%; 
+	box-sizing: border-box; 
+	letter-spacing: 1px; 
+	width: 60%;
+}
 
 input::placeholder{
 	text-transform: uppercase;
@@ -128,19 +137,3 @@ input::placeholder{
 }
 
 .effect-2{border: 0; padding: 7px 0; border-bottom: 1px solid #ccc;}
-
-.forget button{
-	margin-top: 30px;
-	border-radius: 0;
-	color: #aaa;
-	margin-left: 20px;
-	font-weight: 700;
-}
-
-.registration button{
-	margin-top: 20px;
-	border-radius: 0;
-	color: #aaa;
-	margin-left: 20px;
-	font-weight: 700;
-}
