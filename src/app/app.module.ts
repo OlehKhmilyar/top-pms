@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { routing } from './app-routing.module';
+import { ProjectsComponent } from './projects/projects.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { routing } from './app-routing.module';
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
