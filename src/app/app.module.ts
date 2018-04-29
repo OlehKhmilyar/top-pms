@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { routing } from './app-routing.module';
 
 
 @NgModule({
@@ -19,7 +19,7 @@ import { AppRoutingModule } from './/app-routing.module';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

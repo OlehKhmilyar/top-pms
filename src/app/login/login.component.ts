@@ -9,18 +9,18 @@ import { Router } from '@angular/router'
 })
 export class LoginComponent implements OnInit {
 
+  loggedIn: boolean = false;
+  login: string;
+  pass: string;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  goRegistration(){
-    this.router.navigate(['/registration']);
-  }
-
   onSubmit(form: NgForm) {
-    console.log(form.value.login);
-    console.log(form.value.pass);
+    this.login = form.value.login;
+    this.pass = form.value.pass;
   }
 
 }
