@@ -6,15 +6,6 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
-export class ProjectsComponent implements OnInit {
-
-  userName: string = '';
-
-  constructor(private route: ActivatedRoute) { }
-
-  ngOnInit() {
-    this.route.params.subscribe(params =>
-      this.userName = params['username']);
-  }
+export class ProjectsComponent {
 
 }
