@@ -9,6 +9,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { routing } from './app-routing.module';
 import { ProjectsComponent } from './projects/projects.component';
 import { UserService } from './login/user.service';
+import { TasksComponent } from './tasks/tasks.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { UserService } from './login/user.service';
     NavbarComponent,
     LoginComponent,
     RegistrationComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,
