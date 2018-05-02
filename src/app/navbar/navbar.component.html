@@ -2,7 +2,8 @@
 <a class="navbar-brand" [routerLink]="['/projects']">TopPMS</a>
   <ul class="navbar-nav mr-auto">
     <li class="nav-item active">
-      <a class="nav-link" [routerLink]="['/projects']" routerLinkActive="activeLink">Projects</a>
+      <a class="nav-link" [routerLink]="['/projects']" routerLinkActive="activeLink" 
+          [routerLinkActiveOptions]="{exact: true}">Projects</a>
     </li>
     <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/tasks']" routerLinkActive="activeLink">Task</a>

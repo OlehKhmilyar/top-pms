@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ProjectsService } from './projects.service';
 
 @Component({
   selector: 'app-projects',
@@ -7,5 +8,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent {
+
+  constructor(private projectsService: ProjectsService) {
+    
+  }
 
 }

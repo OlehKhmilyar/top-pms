@@ -3,6 +3,6 @@
     padding: 10px;
 }
 
-.nav-item > .activeLink {
-    color: #eed032;
+.activeLink {
+    color: #eed032 !important;
 }
