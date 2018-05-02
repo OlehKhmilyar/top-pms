@@ -11,11 +11,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(private router: Router, private userService: UserService) { }
 
-  url: String = null;
-
   ngOnInit(
   ) {
-    this.url = this.router.url;
   }
 
   logout(){
