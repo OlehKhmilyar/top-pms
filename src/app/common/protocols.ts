@@ -1,4 +1,5 @@
 export interface Project {
+    id: number;
     name: String;
     type: String;
     owner: String;
