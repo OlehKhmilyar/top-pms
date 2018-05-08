@@ -29,5 +29,16 @@ export class ProjectsService {
     public getProjectById(id: number): Project {
         return this.projects.find(project => project.id === id);
     }
+
+    public createProject(name: String, owner: String, type: String) {
+        let lastId = this.projects[this.projects.length-1].id;
+        this.projects.push({
+            id: ++lastId,
+            name: name,
+            owner: owner,
+            type: type,
+            members: new Array<Member>()
+        })
+    }
   
   }

@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <form class="form-horizontal" (ngSubmit)="onCreate(f)" #f="ngForm">
+          <div class="form-group">
+            <label class="control-label" for="name-field">Name:</label>
+            <input type="text" class="form-control" name="name" id="name-field" value="" ngModel>
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="owner-field">Owner:</label>
+            <input type="text" class="form-control" name="owner" id="owner-field" value="" ngModel>
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="type-field">Type:</label>
+              <input type="text" class="form-control" name="type" id="type-field" value="" ngModel>
+            </div>
+        <button class="btn btn-default" type="submit">Create</button>
+      </form>
+    </div>
+  </div>
+</div>

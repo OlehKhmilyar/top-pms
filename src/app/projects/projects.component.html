@@ -2,29 +2,33 @@
 <div class="container">
   <h1>Projects</h1>
   <p class="lead">All Projects</p>
-  <div class="container">
-    <div class="row">
-      <div class="col-3"></div>
-      <div class="col-6">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Owner</th>
-              <th>Type</th>
-              <th>Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let project of projectsService.projects">
-              <td>{{project.name}}</td>
-              <td>{{project.owner}}</td>
-              <td>{{project.type}}</td>
-              <td><a class="nav-link" [routerLink]="getProjectDetailsURL(project)">Details</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="row">
+    <div class="col-3">
+      <button class="btn btn-defaul" [routerLink]="['/projects/create']">Create</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-6">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Owner</th>
+            <th colspan="2">Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let project of projectsService.projects">
+            <td>{{project.name}}</td>
+            <td>{{project.owner}}</td>
+            <td>{{project.type}}</td>
+            <td>
+              <a class="nav-link" [routerLink]="getProjectDetailsURL(project)">Details</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
