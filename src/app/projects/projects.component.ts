@@ -18,4 +18,8 @@ export class ProjectsComponent {
     return ['/projects/' + project.id];
   }
 
+  deleteProject(project: Project) {
+    this.projectsService.deleteProject(project.id);
+  }
+
 }

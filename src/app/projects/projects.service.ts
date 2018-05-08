@@ -30,7 +30,7 @@ export class ProjectsService {
         return this.projects.find(project => project.id === id);
     }
 
-    public createProject(name: String, owner: String, type: String) {
+    public createProject(name: String, owner: String, type: String): void {
         let lastId = this.projects[this.projects.length-1].id;
         this.projects.push({
             id: ++lastId,
@@ -39,6 +39,10 @@ export class ProjectsService {
             type: type,
             members: new Array<Member>()
         })
+    }
+
+    public deleteProject(id: number): void {
+        this.projects = this.projects.filter(project => project.id !== id);
     }
   
   }
