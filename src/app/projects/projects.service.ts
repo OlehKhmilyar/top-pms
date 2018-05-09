@@ -52,8 +52,9 @@ export class ProjectsService {
         });
     }
 
-    public deleteProject(id: number): void {
-        this.projects = this.projects.filter(project => project.id !== id);
+    public deleteProject(project: Project): void {
+        const index = this.projects.indexOf(project);
+        this.projects.splice(index, 1);
     }
   
   }

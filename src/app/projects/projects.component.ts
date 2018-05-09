@@ -23,7 +23,7 @@ export class ProjectsComponent {
   }
 
   deleteProject(project: Project): void {
-    this.projectsService.deleteProject(project.id);
+    this.projectsService.deleteProject(project);
   }
 
 }
