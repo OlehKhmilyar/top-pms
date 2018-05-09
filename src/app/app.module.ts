@@ -14,6 +14,7 @@ import { ProjectsService } from './projects/projects.service';
 import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
 import { ProjectCreateComponent } from './projects/project-create/project-create.component';
 import { ProjectUpdateComponent } from './projects/project-update/project-update.component';
+import { ListItemComponent } from './list-item/list-item.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ProjectUpdateComponent } from './projects/project-update/project-update
     TasksComponent,
     ProjectDetailsComponent,
     ProjectCreateComponent,
-    ProjectUpdateComponent
+    ProjectUpdateComponent,
+    ListItemComponent
   ],
   imports: [
     BrowserModule,

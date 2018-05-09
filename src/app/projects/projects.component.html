@@ -7,34 +7,10 @@
       <button class="btn btn-defaul" [routerLink]="['/projects/create']">Create</button>
     </div>
   </div>
-  <div class="row">
-    <div class="col-2"></div>
-    <div class="col-9">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Owner</th>
-            <th colspan="4">Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let project of projectsService.projects">
-            <td>{{project.name}}</td>
-            <td>{{project.owner}}</td>
-            <td>{{project.type}}</td>
-            <td>
-              <a class="nav-link" [routerLink]="getProjectDetailsURL(project)">Details</a>
-            </td>
-            <td>
-              <button class="btn btn-defaul" (click)="deleteProject(project)">Delete</button>
-            </td>
-            <td>
-              <button class="btn btn-defaul" [routerLink]="getProjectUpdateURL(project)">Update</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="row" *ngFor="let project of projectsService.projects">
+    <app-list-item class="col-12" [item]="project"
+                   [detailsRouterLink]="getProjectDetailsURL(project)"
+                   [updateRouterLink]="getProjectUpdateURL(project)"
+                   (delete)="deleteProject($event)"></app-list-item>
   </div>
 </div>
