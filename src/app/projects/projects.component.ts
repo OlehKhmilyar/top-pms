@@ -14,11 +14,15 @@ export class ProjectsComponent {
 
   }
 
-  getProjectDetailsURL(project: Project) {
+  getProjectDetailsURL(project: Project): Array<String> {
     return ['/projects/' + project.id];
   }
 
-  deleteProject(project: Project) {
+  getProjectUpdateURL(project: Project): Array<String> {
+    return ['/projects/' + project.id + '/update'];
+  }
+
+  deleteProject(project: Project): void {
     this.projectsService.deleteProject(project.id);
   }
 

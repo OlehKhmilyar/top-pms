@@ -41,6 +41,17 @@ export class ProjectsService {
         })
     }
 
+    public updateProject(project: Project, id: number, name: String, owner: String, type: String): void {
+        const index = this.projects.indexOf(project);
+        this.projects.splice(index, 1, {
+            id: id,
+            name: name,
+            owner: owner,
+            type: type,
+            members: new Array<Member>()
+        });
+    }
+
     public deleteProject(id: number): void {
         this.projects = this.projects.filter(project => project.id !== id);
     }

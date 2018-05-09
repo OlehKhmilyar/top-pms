@@ -16,7 +16,9 @@ export class ProjectCreateComponent implements OnInit {
   }
 
   onCreate(form: NgForm) {
-    this.projectsService.createProject(form.value.name, form.value.owner, form.value.type);
+    if (form.value.name !== '' && form.value.owner !== '' && form.value.type !== '') {
+      this.projectsService.createProject(form.value.name, form.value.owner, form.value.type);
+    }
     this.router.navigate(['/projects']);
   }
 

@@ -13,6 +13,7 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
 
   private project: Project = null;
   paramsSubscription: Subscription;
+  
   constructor(
     private route: ActivatedRoute,
     private projectsService: ProjectsService
@@ -20,7 +21,6 @@ export class ProjectDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.getProject();
-    console.log(this.project.name);
   }
 
   private getProject(): void {
