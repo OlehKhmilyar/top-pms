@@ -8,12 +8,9 @@ import { Router } from '@angular/router';
   templateUrl: './project-create.component.html',
   styleUrls: ['./project-create.component.css']
 })
-export class ProjectCreateComponent implements OnInit {
+export class ProjectCreateComponent {
 
   constructor(private projectsService: ProjectsService, private router: Router) { }
-
-  ngOnInit() {
-  }
 
   onCreate(form: NgForm) {
     if (form.value.name !== '' && form.value.owner !== '' && form.value.type !== '') {

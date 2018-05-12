@@ -2,6 +2,11 @@
 <div class="container">
   <h1>Tasks</h1>
   <p class="lead">All tasks</p>
+  <div class="row">
+    <div class="col-3">
+      <button class="btn btn-defaul" [routerLink]="['/tasks/create']">Create</button>
+    </div>
+  </div>
   <div class="row" *ngFor="let task of tasksService.tasks">
     <div class="col-3">{{task.name}}</div>
     <div class="col-3">{{task.type}}</div>

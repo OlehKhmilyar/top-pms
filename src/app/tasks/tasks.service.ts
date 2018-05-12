@@ -23,4 +23,20 @@ export class TasksService {
         return this.tasks.find(task => task.id === id);
     }
 
+    public createTask(name: string, type: string): void {
+        this.tasks.push({
+            id: this.getMaxId() + 1,
+            name: name,
+            type: type
+        })
+    }
+
+    private getMaxId(): number {
+        let maxId: number = 0;
+        for(let task of this.tasks) {
+            maxId = task.id > maxId ? task.id : maxId;
+        }
+        return maxId;
+    }
+
 }
