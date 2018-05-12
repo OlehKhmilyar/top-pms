@@ -1,11 +1,18 @@
 export interface Project {
     id: number;
-    name: String;
-    type: String;
-    owner: String;
+    name: string;
+    type: string;
+    owner: string;
     members: Array<Member>;
+    taskId: number;
 }
 
 export interface Member {
-    name: String;
+    name: string;
+}
+
+export interface Task {
+    id: number;
+    type: string;
+    name: string;
 }

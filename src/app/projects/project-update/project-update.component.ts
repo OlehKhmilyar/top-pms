@@ -28,7 +28,7 @@ export class ProjectUpdateComponent implements OnInit, OnDestroy {
 
   private getProject(): void {
     this.paramsSubscription = this.route.params.subscribe(params => {
-      this.project = this.projectsService.getProjectById(+params['id']);
+      this.project = this.projectsService.getProjectById(Number(params['id']));
     });
   }
 

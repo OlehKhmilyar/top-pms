@@ -1,5 +1,5 @@
 export class UserService {
 
-  public currentUserName: String = null;
+  public currentUserName: string = null;
 
 }
