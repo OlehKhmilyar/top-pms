@@ -3,17 +3,17 @@ import { Project, Member, Task } from '../common/protocols';
 export class TasksService {
     public tasks: Array<Task> = [
         {
-            id: 0,
+            id: 11,
             name: 'task1',
             type: 'major'
         },
         {
-            id: 1,
+            id: 12,
             name: 'task2',
             type: 'minor'
         },
         {
-            id: 2,
+            id: 13,
             name: 'task3',
             type: 'bag-fix'
         }
