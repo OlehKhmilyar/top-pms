@@ -35,7 +35,7 @@ export class ProjectsService {
 
     public createProject(name: string, owner: string, type: string): void {
         this.projects.push({
-            id: this.maxId() + 1,
+            id: this.getMaxId() + 1,
             name: name,
             owner: owner,
             type: type,
@@ -44,16 +44,16 @@ export class ProjectsService {
         })
     }
 
-    public updateProject(project: Project, id: number, name: string, owner: string, type: string): void {
+    public updateProject(project: Project, name: string, owner: string, type: string): void {
         const index = this.projects.indexOf(project);
-        this.projects.splice(index, 1, {
-            id: id,
+        this.projects[index] = {
+            id: project.id,
             name: name,
             owner: owner,
             type: type,
-            members: new Array<Member>(),
+            members: project.members,
             taskId: project.taskId
-        });
+        };
     }
 
     public deleteProject(project: Project): void {
@@ -61,7 +61,7 @@ export class ProjectsService {
         this.projects.splice(index, 1);
     }
 
-    private maxId(): number {
+    private getMaxId(): number {
         let maxId: number = 0;
         for(let project of this.projects) {
             maxId = project.id > maxId ? project.id : maxId;

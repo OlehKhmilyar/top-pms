@@ -11,12 +11,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { TasksComponent } from './tasks/tasks.component';
+import { ListItemComponent } from './list-item/list-item.component';
+
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
 import { ProjectCreateComponent } from './projects/project-create/project-create.component';
 import { ProjectUpdateComponent } from './projects/project-update/project-update.component';
-import { ListItemComponent } from './list-item/list-item.component';
+
+import { TasksComponent } from './tasks/tasks.component';
+import { TaskDetailsComponent } from './tasks/task-details/task-details.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { ListItemComponent } from './list-item/list-item.component';
     ProjectDetailsComponent,
     ProjectCreateComponent,
     ProjectUpdateComponent,
-    ListItemComponent
+    ListItemComponent,
+    TaskDetailsComponent
   ],
   imports: [
     BrowserModule,

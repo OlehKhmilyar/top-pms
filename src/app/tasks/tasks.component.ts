@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { TasksService } from './tasks.service';
+import { Task } from '../common/protocols';
 
 @Component({
   selector: 'app-tasks',
@@ -10,5 +11,9 @@ import { TasksService } from './tasks.service';
 export class TasksComponent {
 
   constructor(private tasksService: TasksService) { }
+
+  getTaskDetailsURL(task: Task): Array<String> {
+    return ['/tasks/' + task.id];
+  }
 
 }

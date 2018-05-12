@@ -34,7 +34,7 @@ export class ProjectUpdateComponent implements OnInit, OnDestroy {
 
   private onUpdate(form: NgForm): void {
     if (form.value.name !== '' && form.value.owner !== '' && form.value.type !== '') {
-      this.projectsService.updateProject(this.project, this.project.id, form.value.name,
+      this.projectsService.updateProject(this.project, form.value.name,
         form.value.owner, form.value.type);
     }
     this.router.navigate(['/projects']);
