@@ -31,6 +31,11 @@ export class TasksService {
         })
     }
 
+    public deleteTask(task: Task): void {
+        const index = this.tasks.indexOf(task);
+        this.tasks.splice(index, 1);
+    }
+
     private getMaxId(): number {
         let maxId: number = 0;
         for(let task of this.tasks) {

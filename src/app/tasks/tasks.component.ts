@@ -16,4 +16,8 @@ export class TasksComponent {
     return ['/tasks/' + task.id];
   }
 
+  deleteTask(task: Task): void {
+    this.tasksService.deleteTask(task);
+  }
+
 }
