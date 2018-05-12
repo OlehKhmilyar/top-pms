@@ -31,6 +31,12 @@ export class TasksService {
         })
     }
 
+    public updateProject(updatedTask: Task): void {
+        const task = this.getTaskById(updatedTask.id);
+        const index = this.tasks.indexOf(task);
+        this.tasks[index] = updatedTask;
+    }
+
     public deleteTask(task: Task): void {
         const index = this.tasks.indexOf(task);
         this.tasks.splice(index, 1);

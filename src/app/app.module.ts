@@ -21,6 +21,7 @@ import { ProjectUpdateComponent } from './projects/project-update/project-update
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskDetailsComponent } from './tasks/task-details/task-details.component';
 import { TaskCreateComponent } from './tasks/task-create/task-create.component';
+import { TaskUpdateComponent } from './tasks/task-update/task-update.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { TaskCreateComponent } from './tasks/task-create/task-create.component';
     ProjectUpdateComponent,
     ListItemComponent,
     TaskDetailsComponent,
-    TaskCreateComponent
+    TaskCreateComponent,
+    TaskUpdateComponent
   ],
   imports: [
     BrowserModule,

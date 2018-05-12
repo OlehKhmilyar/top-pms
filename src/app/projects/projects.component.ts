@@ -20,7 +20,7 @@ export class ProjectsComponent {
   }
 
   getProjectUpdateURL(project: Project): Array<String> {
-    return ['/projects/' + project.id + '/update'];
+    return ['/projects/update/' + project.id];
   }
 
   deleteProject(project: Project): void {

@@ -9,6 +9,7 @@ import { ProjectCreateComponent } from './projects/project-create/project-create
 import { ProjectUpdateComponent } from './projects/project-update/project-update.component';
 import { TaskDetailsComponent } from './tasks/task-details/task-details.component';
 import { TaskCreateComponent } from './tasks/task-create/task-create.component';
+import { TaskUpdateComponent } from './tasks/task-update/task-update.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,10 +18,11 @@ const appRoutes: Routes = [
   { path: 'projects', component: ProjectsComponent},
   { path: 'projects/create', component: ProjectCreateComponent},
   { path: 'projects/:id', component: ProjectDetailsComponent},
-  { path: 'projects/:id/update', component: ProjectUpdateComponent},
+  { path: 'projects/update/:id', component: ProjectUpdateComponent},
   { path: 'tasks', component: TasksComponent},
   { path: 'tasks/create', component: TaskCreateComponent},
-  { path: 'tasks/:id', component: TaskDetailsComponent}
+  { path: 'tasks/:id', component: TaskDetailsComponent},
+  { path: 'tasks/update/:id', component: TaskUpdateComponent}
 
 ];
 

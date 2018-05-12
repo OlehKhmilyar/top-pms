@@ -16,6 +16,10 @@ export class TasksComponent {
     return ['/tasks/' + task.id];
   }
 
+  getTaskUpdateURL(task: Task): Array<String> {
+    return ['/tasks/update/' + task.id];
+  }
+
   deleteTask(task: Task): void {
     this.tasksService.deleteTask(task);
   }
