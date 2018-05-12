@@ -2,20 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { routing } from './app-routing.module';
+import { ProjectsService } from './projects/projects.service';
+import { UserService } from './login/user.service';
+import { TasksService } from './tasks/tasks.service';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { routing } from './app-routing.module';
-import { ProjectsComponent } from './projects/projects.component';
-import { UserService } from './login/user.service';
 import { TasksComponent } from './tasks/tasks.component';
-import { ProjectsService } from './projects/projects.service';
+import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
 import { ProjectCreateComponent } from './projects/project-create/project-create.component';
 import { ProjectUpdateComponent } from './projects/project-update/project-update.component';
 import { ListItemComponent } from './list-item/list-item.component';
-
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ListItemComponent } from './list-item/list-item.component';
   ],
   providers: [
     UserService,
-    ProjectsService
+    ProjectsService,
+    TasksService
   ],
   bootstrap: [AppComponent]
 })
