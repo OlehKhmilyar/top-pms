@@ -14,7 +14,7 @@ import { ProjectsService } from '../projects.service';
 export class ProjectUpdateComponent implements OnInit, OnDestroy {
 
   private project: Project = null;
-  paramsSubscription: Subscription;
+  private paramsSubscription: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,15 +28,12 @@ export class ProjectUpdateComponent implements OnInit, OnDestroy {
 
   private getProject(): void {
     this.paramsSubscription = this.route.params.subscribe(params => {
-      this.project = this.projectsService.getProjectById(Number(params['id']));
+      this.project = JSON.parse(JSON.stringify(this.projectsService.getProjectById(Number(params['id']))));
     });
   }
 
-  private onUpdate(form: NgForm): void {
-    if (form.value.name !== '' && form.value.owner !== '' && form.value.type !== '') {
-      this.projectsService.updateProject(this.project, form.value.name,
-        form.value.owner, form.value.type);
-    }
+  private onUpdate(): void {
+    this.projectsService.updateProject(this.project);
     this.router.navigate(['/projects']);
   }
 

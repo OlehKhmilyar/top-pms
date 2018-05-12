@@ -44,16 +44,10 @@ export class ProjectsService {
         })
     }
 
-    public updateProject(project: Project, name: string, owner: string, type: string): void {
+    public updateProject(updatedProject: Project): void {
+        const project = this.getProjectById(updatedProject.id);
         const index = this.projects.indexOf(project);
-        this.projects[index] = {
-            id: project.id,
-            name: name,
-            owner: owner,
-            type: type,
-            members: project.members,
-            taskId: project.taskId
-        };
+        this.projects[index] = updatedProject;
     }
 
     public deleteProject(project: Project): void {
