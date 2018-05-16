@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs/Subscription';
 export class ProjectDetailsComponent implements OnInit, OnDestroy {
 
   private project: Project = null;
-  paramsSubscription: Subscription;
+  private paramsSubscription: Subscription;
   
   constructor(
     private route: ActivatedRoute,

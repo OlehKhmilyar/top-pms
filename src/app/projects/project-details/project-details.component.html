@@ -1,24 +1,18 @@
 <app-navbar></app-navbar>
 <div class="container">
-    <div class="row">
-      <div class="col-3"></div>
-      <div class="col-6">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Owner</th>
-              <th>Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{{project.name}}</td>
-              <td>{{project.owner}}</td>
-              <td>{{project.type}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+  <p class="lead">Project's details</p>
+  <div class="row">
+      <div class="col-2"></div>
+      <div class="col-2">{{project.name}}</div>
+      <div class="col-2">{{project.owner}}</div>
+      <div class="col-2">{{project.type}}</div>
+      <div class="col-2"></div>
   </div>
+  <p class="lead">Project's tasks</p>
+  <div class="row" *ngFor="let task of project.tasks">
+      <div class="col-2"></div>
+      <div class="col-2">{{task.name}}</div>
+      <div class="col-2">{{task.type}}</div>
+      <div class="col-2"></div>
+  </div>
+</div>

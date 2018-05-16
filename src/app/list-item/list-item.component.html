@@ -2,7 +2,7 @@
   <div class="col-2">{{item.name}}</div>
   <div class="col-2" *ngIf="item.owner">{{item.owner}}</div>
   <div class="col-2">{{item.type}}</div>
-  <div class="col-1"><a class="nav-link" [routerLink]="detailsRouterLink">Details</a></div>
-  <div class="col-1"><button class="btn btn-defaul" [routerLink]="updateRouterLink">Update</button></div>
-  <div class="col-1"><button class="btn btn-defaul" (click)="deleteItem()">Delete</button>  </div>
+    <div class="col-1"><button class="btn btn-info" [routerLink]="detailsRouterLink">Details</button></div>
+    <div class="col-1"><button class="btn btn-warning" [routerLink]="updateRouterLink">Update</button></div>
+    <div class="col-1"><button class="btn btn-danger" (click)="deleteItem()">Delete</button>  </div>
 </div>

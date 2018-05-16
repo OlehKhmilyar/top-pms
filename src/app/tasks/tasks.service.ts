@@ -1,5 +1,8 @@
 import { Project, Member, Task } from '../common/protocols';
+import { Injectable } from '@angular/core';
+import { ProjectsService } from '../projects/projects.service';
 
+@Injectable()
 export class TasksService {
     public tasks: Array<Task> = [
         {
@@ -19,16 +22,21 @@ export class TasksService {
         }
     ];
 
+    constructor() {}
+
     public getTaskById(id: number): Task {
         return this.tasks.find(task => task.id === id);
     }
 
-    public createTask(name: string, type: string): void {
-        this.tasks.push({
-            id: this.getMaxId() + 1,
-            name: name,
-            type: type
-        })
+    public createTask(name: string, type: string): Task {
+        const id = this.getMaxId() + 1;
+        const task: Task = {
+            id: id,
+            type: type,
+            name: name
+        } 
+        this.tasks.push(task);
+        return task;
     }
 
     public updateProject(updatedTask: Task): void {
