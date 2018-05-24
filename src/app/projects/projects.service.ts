@@ -12,6 +12,7 @@ export class ProjectsService {
     constructor(private httpRequestor: HttpRequestor) {}
 
     public getProjects(): Promise<any> {
+        //comment
         return this.httpRequestor.getRequest(Constants.ProjectsEndpoint).then(data => {
             this.projects = data;
             return this.projects;
