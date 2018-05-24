@@ -1,38 +1,22 @@
 import { Project, Member, Task } from '../common/protocols';
-import { TasksService } from '../tasks/tasks.service';
+import { HttpRequestor } from '../common/http-requestor';
+
 import { Injectable } from '@angular/core';
+import { Constants } from '../common/constans';
 
 @Injectable()
 export class ProjectsService {
 
-    public projects: Array<Project> = [
-        {
-            id: 0,
-            name: 'VizLocal',
-            type: 'web',
-            owner: 'Marian BB',
-            members: new Array<Member>(),
-            tasks: new Array<Task>()
-        },
-        {
-            id: 1,
-            name: 'Elicall',
-            type: 'mobile',
-            owner: 'Volodia DD',
-            members: new Array<Member>(),
-            tasks: new Array<Task>()
-        },
-        {
-            id: 2,
-            name: 'Divtricks',
-            type: 'web',
-            owner: 'Volodia DD',
-            members: new Array<Member>(),
-            tasks: new Array<Task>()
-        }
-    ];
+    public projects: Array<Project> = [];
 
-    constructor() {}
+    constructor(private httpRequestor: HttpRequestor) {}
+
+    public getProjects(): Promise<any> {
+        return this.httpRequestor.getRequest(Constants.ProjectsEndpoint).then(data => {
+            this.projects = data;
+            return this.projects;
+        });
+    }
 
     public getProjectById(id: number): Project {
         return this.projects.find(project => project.id === id);
@@ -64,12 +48,21 @@ export class ProjectsService {
         project.tasks.push(task);
     }
 
+    public deleteProjectTask(task: Task) {
+        
+    }
+
     private getMaxId(): number {
         let maxId: number = 0;
         for(let project of this.projects) {
             maxId = project.id > maxId ? project.id : maxId;
         }
         return maxId;
+    }
+
+    private handleError(error: any): Promise<any> {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
     }
   
   }

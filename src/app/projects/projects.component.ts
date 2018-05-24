@@ -9,10 +9,16 @@ import { Project } from '../common/protocols';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
 
   constructor(private projectsService: ProjectsService) {
 
+  }
+
+  ngOnInit() {
+    this.projectsService.getProjects().then(data => {
+      console.log(data);
+    });
   }
 
   getProjectDetailsURL(project: Project): Array<String> {

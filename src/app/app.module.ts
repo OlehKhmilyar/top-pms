@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { routing } from './app-routing.module';
 import { ProjectsService } from './projects/projects.service';
@@ -22,6 +23,7 @@ import { TasksComponent } from './tasks/tasks.component';
 import { TaskDetailsComponent } from './tasks/task-details/task-details.component';
 import { TaskCreateComponent } from './tasks/task-create/task-create.component';
 import { TaskUpdateComponent } from './tasks/task-update/task-update.component';
+import { HttpRequestor } from './common/http-requestor';
 
 @NgModule({
   declarations: [
@@ -41,13 +43,15 @@ import { TaskUpdateComponent } from './tasks/task-update/task-update.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     routing
   ],
   providers: [
     UserService,
     ProjectsService,
-    TasksService
+    TasksService,
+    HttpRequestor
   ],
   bootstrap: [AppComponent]
 })
