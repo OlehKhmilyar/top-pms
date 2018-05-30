@@ -13,7 +13,9 @@ export class HttpRequestor {
 
     public postRequest(url: string, data: any): Promise<any> {
         const body = JSON.stringify(data);
-        const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+        const headers = new HttpHeaders({ 
+            'Content-Type': 'application/json'
+        });
 
         return this.http.post(url, body, {headers})
             .toPromise()

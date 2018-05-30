@@ -12,10 +12,9 @@ export class ProjectsService {
     constructor(private httpRequestor: HttpRequestor) {}
 
     public getProjects(): Promise<any> {
-        //comment
         return this.httpRequestor.getRequest(Constants.ProjectsEndpoint).then(data => {
+            console.log(data);
             this.projects = data;
-            return this.projects;
         });
     }
 
@@ -23,15 +22,27 @@ export class ProjectsService {
         return this.projects.find(project => project.id === id);
     }
 
-    public createProject(name: string, owner: string, type: string): void {
-        this.projects.push({
+    public createProject(name: string, owner: string, type: string): Promise<any> {
+        // this.projects.push({
+        //     id: this.getMaxId() + 1,
+        //     name: name,
+        //     owner: owner,
+        //     type: type,
+        //     members: new Array<Member>(),
+        //     tasks: new Array<Task>()
+        // })
+
+        const project: Project = {
             id: this.getMaxId() + 1,
             name: name,
             owner: owner,
             type: type,
             members: new Array<Member>(),
             tasks: new Array<Task>()
-        })
+        };
+        return this.httpRequestor.postRequest(Constants.ProjectCreate, project)
+            .then(result => console.log(result))
+            .catch(error => console.log(error));
     }
 
     public updateProject(updatedProject: Project): void {

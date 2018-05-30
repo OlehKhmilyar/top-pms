@@ -16,9 +16,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.projectsService.getProjects().then(data => {
-      console.log(data);
-    });
+    this.projectsService.getProjects().then();
   }
 
   getProjectDetailsURL(project: Project): Array<String> {

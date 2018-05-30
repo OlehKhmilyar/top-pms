@@ -14,9 +14,10 @@ export class ProjectCreateComponent {
 
   onCreate(form: NgForm) {
     if (form.value.name !== '' && form.value.owner !== '' && form.value.type !== '') {
-      this.projectsService.createProject(form.value.name, form.value.owner, form.value.type);
+      this.projectsService.createProject(form.value.name, form.value.owner, form.value.type)
+        .then(data => this.router.navigate(['/projects'])
+      );
     }
-    this.router.navigate(['/projects']);
   }
 
 }
